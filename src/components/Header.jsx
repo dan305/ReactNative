@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
@@ -11,6 +12,16 @@ const Header = ({route}) => {
   return (
     <View style = {styles.container}>
       <Text style = {width > 360 ? styles.text: styles.textSm}>{route.name}</Text>
+=======
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { colors } from '../constants/colors'
+
+const Header = ({title}) => {
+  return (
+    <View style = {styles.container}>
+      <Text style = { width > 360 ? styles.text: styles.textSm}>{title}</Text>
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
     </View>
   )
 }
@@ -33,6 +44,10 @@ const styles = StyleSheet.create({
   textSm: {
     color: colors.teal200,
     fontFamily: 'Josefin',
+<<<<<<< HEAD
     fontSize: 16
+=======
+    fontSize: 22
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
   }
 })

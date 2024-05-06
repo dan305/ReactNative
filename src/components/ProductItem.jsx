@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Image, StyleSheet, Text, Pressable } from "react-native"
 import React from "react"
 import Card from "./Card"
@@ -22,6 +23,18 @@ const ProductItem = ({
         style={styles.pressable}
         onPress={handleNavigate}
       >
+=======
+import { Image, StyleSheet, Text, Pressable, useWindowDimensions } from "react-native"
+import React from "react"
+import Card from "./Card"
+import { colors } from "../constants/colors"
+
+const ProductItem = ({ product, setProductSelected = () => {} }) => {
+  const {height, width} = useWindowDimensions()
+  return (
+    <Card style={styles.additionalStylesCard}>
+      <Pressable style={styles.pressable}>
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
         <Text style={styles.textCategory}>{product.title}</Text>
         <Image
           resizeMode="cover"
@@ -38,7 +51,11 @@ export default ProductItem
 const styles = StyleSheet.create({
   image: {
     height: 120,
+<<<<<<< HEAD
     width: "30%",
+=======
+    width: 100,
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
     borderRadius: 8,
   },
   additionalStylesCard: {
@@ -47,6 +64,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   textCategory: {
+<<<<<<< HEAD
     width: "70%",
     color: colors.teal200,
   },
@@ -57,4 +75,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingLeft: 10,
   },
+=======
+    color: colors.teal200,
+  },
+  pressable: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    alignItems: 'center',
+    paddingLeft: 10,
+  }
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
 })

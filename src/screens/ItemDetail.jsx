@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+<<<<<<< HEAD
   useWindowDimensions
 } from "react-native"
 import React, { useEffect, useState } from "react"
@@ -26,17 +27,37 @@ const ItemDetail = ({ route, navigation }) => {
   //Landscape = horizontal
   //Portrait = vertical
 
+=======
+} from "react-native"
+import React, { useEffect, useState } from "react"
+import allProducts from "../data/products.json"
+
+const ItemDetail = ({ idSelected, setProductSelected }) => {
+  console.log(idSelected)
+
+  const [product, setProduct] = useState(null)
+/*   const [orientation, setOrientation] = useState("portrait")
+  const { width, height } = useWindowDimensions()
+
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
   useEffect(() => {
     if (width > height) setOrientation("landscape")
     else setOrientation("portrait")
   }, [width, height])
 
+<<<<<<< HEAD
   /* useEffect(() => {
+=======
+  console.log(orientation) */
+
+  useEffect(() => {
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
     //Encontrar el producto por su id
     const productSelected = allProducts.find(
       (product) => product.id === idSelected
     )
     setProduct(productSelected)
+<<<<<<< HEAD
   }, [idSelected]) */
 
   const handleAddCart = () => {
@@ -52,10 +73,26 @@ const ItemDetail = ({ route, navigation }) => {
             orientation === "portrait"?
             styles.mainContainer
             : styles.mainContainerLandscape
+=======
+  }, [idSelected])
+
+  console.log(product)
+
+  return (
+    <View>
+      <Button onPress={() => setProductSelected("")} title="Go back" />
+      {product ? (
+        <View
+          style={
+            // orientation === "portrait"?
+            styles.mainContainer
+            //   : styles.mainContainerLandscape
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
           }
         >
           <Image
             source={{ uri: product.images[0] }}
+<<<<<<< HEAD
             style={orientation === "portrait" ? styles.image : styles.imageLandscape}
             resizeMode="cover"
           />
@@ -64,6 +101,16 @@ const ItemDetail = ({ route, navigation }) => {
             <Text>{product.description}</Text>
             <Text style={styles.price}>${product.price}</Text>
             <Button title="Add cart" onPress={handleAddCart}></Button>
+=======
+            style={styles.image}
+            resizeMode="cover"
+          />
+          <View style={styles.textContainer}>
+            <Text>{product.title}</Text>
+            <Text>{product.description}</Text>
+            <Text>${product.price}</Text>
+            <Button title="Add cart"></Button>
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
           </View>
         </View>
       ) : null}
@@ -85,12 +132,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-start",
     padding: 10,
+<<<<<<< HEAD
     gap: 10,
+=======
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
   },
   image: {
     width: '100%',
     height: 250,
   },
+<<<<<<< HEAD
   imageLandscape: {
     width: '45%',
     height: 200
@@ -110,4 +161,9 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     width: '100%'
   }
+=======
+  textContainer: {
+    flexDirection: "column",
+  },
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
 })

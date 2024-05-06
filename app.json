@@ -1,8 +1,15 @@
 {
   "expo": {
+<<<<<<< HEAD
     "name": "clase-11 state and redux",
     "slug": "clase-11 state and redux",
     "version": "1.0.0",
+=======
+    "name": "clase-04",
+    "slug": "clase-04",
+    "version": "1.0.0",
+    "orientation": "portrait",
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

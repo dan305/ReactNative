@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Expo Location => https://docs.expo.dev/versions/latest/sdk/location/
 Google maps static => https://developers.google.com/maps/documentation/maps-static/overview
 Google maps start => https://developers.google.com/maps/documentation/maps-static/start?hl=es-419
 Reverse geocoding => https://developers.google.com/maps/documentation/geocoding/start?hl=es_419
+=======
+Css min-width: https://www.w3schools.com/cssref/pr_dim_min-width.php
+useDimensions: https://reactnative.dev/docs/usewindowdimensions
+SafeAreaView: https://reactnative.dev/docs/safeareaview
+SafeAreaView (Android): https://stackoverflow.com/questions/51289587/how-to-use-safeareaview-for-android-notch-devices
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3

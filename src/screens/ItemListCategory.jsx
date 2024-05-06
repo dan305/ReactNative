@@ -1,5 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from "react-native"
 import { colors } from "../constants/colors"
+<<<<<<< HEAD
 // import products from "../data/products.json"
 import ProductItem from "../components/ProductItem"
 import Search from "../components/Search"
@@ -10,11 +11,23 @@ const ItemListCategory = ({
   setCategorySelected = () => {},
   navigation,
   route
+=======
+import products from "../data/products.json"
+import ProductItem from "../components/ProductItem"
+import Search from "../components/Search"
+import { useState, useEffect } from "react"
+
+const ItemListCategory = ({
+  categorySelected = "",
+  setCategorySelected = () => {},
+  setItemCategorySelected = () => {},
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
 }) => {
   const [keyWord, setKeyword] = useState("")
   const [productsFiltered, setProductsFiltered] = useState([])
   const [error, setError] = useState("")
 
+<<<<<<< HEAD
   const {category: categorySelected} = route.params
 
   const {data: productsFetched, error: errorFromFetch, isLoading} = useGetProductsByCategoryQuery(categorySelected)
@@ -22,6 +35,8 @@ const ItemListCategory = ({
   /* console.log(errorFromFetch);
   console.log(isLoading); */
 
+=======
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
   useEffect(() => {
     //Products filtered by category
 
@@ -41,6 +56,7 @@ const ItemListCategory = ({
       return
     }
 
+<<<<<<< HEAD
     /* const productsPrefiltered = products.filter(
       (product) => product.category === categorySelected
     ) */
@@ -53,12 +69,25 @@ const ItemListCategory = ({
       setError("")
     }
   }, [keyWord, categorySelected, productsFetched, isLoading])
+=======
+    const productsPrefiltered = products.filter(
+      (product) => product.category === categorySelected
+    )
+    //Product filtered by name
+    const productsFilter = productsPrefiltered.filter((product) =>
+      product.title.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase())
+    )
+    setProductsFiltered(productsFilter)
+    setError("")
+  }, [keyWord, categorySelected])
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
 
   return (
     <View style={styles.flatListContainer}>
       <Search
         error={error}
         onSearch={setKeyword}
+<<<<<<< HEAD
         goBack={() => navigation.goBack()}
       />
       <FlatList
@@ -66,6 +95,13 @@ const ItemListCategory = ({
         renderItem={({ item }) => (
           <ProductItem product={item} navigation={navigation}/>
         )}
+=======
+        goBack={() => setCategorySelected("")}
+      />
+      <FlatList
+        data={productsFiltered}
+        renderItem={({ item }) => <ProductItem product={item} />}
+>>>>>>> 09f365d4ea36f1159d36f492b4df4d9a824af5f3
         keyExtractor={(producto) => producto.id}
       />
     </View>
